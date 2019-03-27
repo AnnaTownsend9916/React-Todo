@@ -1,13 +1,36 @@
 import React from 'react';
+import ShoppingList from "../src/components/ShoppingComponents/ShoppingList";
+import ShoppingForm from "./components/ShoppingComponents/ShoppingForm";
 
 class App extends React.Component{
   constructor() {
     super();
     this.state = {
       shopping: [
-        
-      ]
+        {
+          task: 'Organize Garage',
+          id: 1528817077286,
+          completed: false
+        },
+        {
+          task: 'Bake Cookies',
+          id: 1528817084358,
+          completed: false
+        }
+       ]
     }
+  }
+
+
+  render() {
+    return (
+      <div className="app">
+      {console.log(this.state)}
+      <strong>App</strong>
+      <ShoppingList list={this.state.list} />
+      <ShoppingForm />
+      </div>
+    );
   }
 }
 
